@@ -1,0 +1,78 @@
+body {
+  background: #121213;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.board {
+  display: grid;
+  gap: 8px;
+  margin: 20px auto;
+}
+
+.row {
+  display: grid;
+  gap: 8px;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.cell.green { background: #538d4e; border-color: #538d4e; }
+.cell.yellow { background: #b59f3b; border-color: #b59f3b; }
+.cell.gray { background: #3a3a3c; border-color: #3a3a3c; }
+
+.controls {
+  margin: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 10px 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.key-row {
+  display: flex;
+  gap: 6px;
+}
+
+.keyboard button {
+  background: #818384;
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+
+.keyboard button.green { background: #538d4e; }
+.keyboard button.yellow { background: #b59f3b; }
+.keyboard button.gray { background: #3a3a3c; }
+
+#message {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
