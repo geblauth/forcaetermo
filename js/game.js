@@ -70,14 +70,15 @@ function evaluateGuess(secret, guess) {
 
     for (let i = 0; i < secret.length; i++) {
         if (guess[i] === secret[i]) {
-            result[i] == "green"
-            used[i] == true
+            result[i] = "green"
+            used[i] = true
+            console.log(result)
         }
     }
 
     for (let i = 0; i < secret.length; i++) {
 
-        if (result[i] !== "gray") continue
+        if (result[i] === "green") continue
 
         for (let j = 0; j < secret.length; j++) {
             if (!used[j] && guess[i] === secret[j]) {
