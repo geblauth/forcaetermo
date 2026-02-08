@@ -59,6 +59,7 @@ button {
 .key-row {
   display: flex;
   gap: 6px;
+  justify-content: center;
 }
 
 .keyboard button {

@@ -9,8 +9,8 @@ let currentRow = 0
 let gameOver = false
 
 export function initGame() {
-    secret.normalizeWord(prompt("Jogador 1: Digite a palavra secreta"))
-    maxAttempts = Math.cell(secret.length * 1.2)
+    secret = normalizeWord(prompt("Jogador 1: Digite a palavra secreta").trim())
+    maxAttempts = Math.ceil(secret.length * 1.2)
     attempts = 0
     currentRow = 0
     gameOver = false
@@ -36,6 +36,20 @@ export function submitGuess(guess) {
     attempts++
     currentRow++
 
+
+    console.log({
+  secret,
+  guess,
+  equal: secret === guess,
+  result
+})
+
+    if(guess === secret){
+          showMessage("Voce venceu!")
+        gameOver = true
+        return
+    }
+
     if (result.every(r => r === "green")) {
         showMessage("Voce venceu!")
         gameOver = true
@@ -43,14 +57,19 @@ export function submitGuess(guess) {
         showMessage("Voce perdeu!")
         gameOver = true
     }
+
+
+
+
+
 }
 
-function evaluateGuess() {
+function evaluateGuess(secret, guess) {
     const result = Array(secret.length).fill("gray")
     const used = Array(secret.length).fill(false)
 
     for (let i = 0; i < secret.length; i++) {
-        if (guest[i] === secret[i]) {
+        if (guess[i] === secret[i]) {
             result[i] == "green"
             used[i] == true
         }

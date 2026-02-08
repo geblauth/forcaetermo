@@ -1,5 +1,5 @@
 const keyboard = document.getElementById("keyboard")
-const keys {}
+const keys= {}
 
 const layout = [
     "QWERTYUIOP",
